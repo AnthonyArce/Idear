@@ -1,0 +1,86 @@
+.modal{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #111111bd;
+    display: flex;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .6s .9s;
+    --transform: translateY(-100vh);
+    --transition: transform .8s;
+}
+
+.modal--show{
+    opacity: 1;
+    pointer-events: unset;
+    transition: opacity .6s;
+    --transform: translateY(0);
+    --transition: transform .8s .8s;
+}
+
+.modal__container{
+    margin: auto;
+    width: 90%;
+    max-width: 600px;
+    max-height: 90%;
+    background-color: #fff;
+    border-radius: 1rem;
+    padding: 3em 2.5em;
+    display: grid;
+    gap: 1em;
+    place-items: center;
+    grid-auto-columns: 100%;
+    transform: var(--transform);
+    transition: var(--transition);
+    box-shadow: 0em 0em 1em rgb(0 0 0 / 7%);
+}
+
+.modal__title{
+    font-size: 2.5rem;
+}
+
+.modal__paragraph{
+    margin-bottom: 10px;
+}
+
+.modal__img{
+    width: 90%;
+    max-width: 300px;
+}
+
+.modal__close{
+    padding: 0.6em 2em;
+    background: #55b3d5; 
+    color: rgb(255, 255, 255);
+    box-shadow: 0px 0px 1px 0px;
+    border-radius: 20em;
+    font-size: 0.9em;
+    font-weight: 300;
+    display: inline-block;
+    font-family: "Poppins", sans-serif;
+    text-decoration: none;
+}
+
+.modal__close:hover{
+    color: #fff;
+    background-color: #232434;
+}
+
+.modal-body {
+    width: 36em;
+    text-align: center;
+    font-size: 0.8em;
+}
+
+.form-control, .dataTable-input{
+    width: 93%;
+}
+
+.mb-3 {
+    font-family: "Poppins", sans-serif;
+    font-weight: bolder;
+    margin: 1em;
+}

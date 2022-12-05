@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang=”es”>
+<head>
+    <meta charset=”UTF-8″ />
+    <title>Ide.AR</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+    <link rel="stylesheet" href="/css/styles.css">
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+    <script src="/scripts/scripts.js"></script>
+    <script>
+		document.addEventListener('DOMContentLoaded', ()=> {
+		
+			const userInit = JSON.parse(localStorage.getItem("UserInit"));
+			const {logout} = userInit;
+			console.log(userInit);
+		
+			if(logout === false ){
+				location.href = "index.html";
+			}
+		
+		})	
+	</script>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+    <style>
+        .publicacionContent{
+            background: var(--main-bg-color);
+            display: flex;
+            padding: 2rem;
+            border-radius: 1rem;
+            flex-flow: column;
+            margin-left: 1rem;
+            font-family: 'Roboto', sans-serif;
+            text-align: justify;
+            box-shadow: 0em 0em 1em rgb(0 0 0 / 7%);
+            font-size: 0.9rem;
+            width: 75%;
+        }
+
+        section.principalPost {
+            background-color: var(--main-bg2-color);
+            display: flex;
+            margin: 0 auto;
+        }
+
+        section.principalPost:first-child{
+            padding-top: 5rem;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="#home" class="logoNav"><i class='fas fa-brain'></i> IdeAR</a>
+        <span class="menuIcon"><i class="fa-solid fa-bars"></i></span>
+        <ol class="navOptions">
+            <li><a href="#">Publicaciones</a></li>
+            <li><a href="profile.html">Perfil</a></li>
+            <li><a href="#team">Nosotros</a></li>
+            <li><a href="#contact">Contacto</a></li>
+        </ol>
+        <ol class="userOptions">
+            <!-- <li><a href="register.html"><i class="fa-solid fa-user"></i> Mi cuenta</a></li> -->
+            <li><a href="" onclick="exit()"><i class="fa-solid fa-right-to-bracket"></i> Desconectarse</a></li>
+        </ol>
+    </nav>
+    <main>
+        <script>
+        function ellipsis_box(elemento, max_chars){
+            limite_text = $(elemento).text();
+            if (limite_text.length > max_chars)
+            {
+            limite = limite_text.substr(0, max_chars)+" ...";
+            $(elemento).text(limite);
+            }
+            }
+            
+            $(function()
+            {
+            ellipsis_box("p.limitado", 1000);
+            });
+        </script>
+
+        <section class="container postView">
+            <div class="navContent">
+                
+            </div>
+
+            <section class="projectOptions">
+                <a href="postProject.html" class="btn-contact-bg"><i class="fa-solid fa-square-plus" type="button"></i> Hacer publicación</a>
+                <br>
+            </section>
+
+            <section class="projects" >
+                <section class="items" id="containerPublicaciones">
+
+                </section>
+            </section>
+        </section>
+    </main>          
+    <footer>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+            <path fill="#f6fbff" fill-opacity="1" d="M0,192L30,176C60,160,120,128,180,138.7C240,149,300,203,360,213.3C420,224,480,192,540,176C600,160,660,160,720,149.3C780,139,840,117,900,133.3C960,149,1020,203,1080,218.7C1140,235,1200,213,1260,186.7C1320,160,1380,128,1410,112L1440,96L1440,0L1410,0C1380,0,1320,0,1260,0C1200,0,1140,0,1080,0C1020,0,960,0,900,0C840,0,780,0,720,0C660,0,600,0,540,0C480,0,420,0,360,0C300,0,240,0,180,0C120,0,60,0,30,0L0,0Z"></path>
+        </svg>
+
+        <a href="#" class="mouseBack">
+            <div class="arrowUp">
+                <i class="fa-solid fa-arrow-up"></i>
+            </div>
+        </a>
+
+        <div class="infoFooter">
+            <section class="infoF">
+                <img src="img/footer.svg">
+            </section>
+        </div>
+        <p>
+            <a href="">Terminos y Condiciones</a>
+            <br>
+            <a href="">Politica de Privacidad</a>
+        </p>
+        <p class="copyright">
+            Copyright © 2022 All rights reserved
+        </p>
+    </footer>
+    <!-- <script>
+
+		const exit = () =>{
+			console.log("salio");
+			let UsuarioInit = {
+				logout:false,
+				name:"",
+			};
+			localStorage.getItem(UsuarioInit);
+			localStorage.removeItem("infoPubli");
+			location.href = "index.html";
+
+		}
+	</script> -->
+    <script src="js/helpers.js"></script>
+    <script src="js/home.js"></script>
+</body>
+</html>

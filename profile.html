@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang=”es”>
+<head>
+    <meta charset=”UTF-8″ />
+    <title>Ide.AR</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+    <link rel="stylesheet" href="/css/styles.css">
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+    <script src="/scripts/scripts.js"></script>
+    <script>
+		document.addEventListener('DOMContentLoaded', ()=> {
+		
+			const userInit = JSON.parse(localStorage.getItem("UserInit"));
+			const {logout} = userInit;
+			console.log(userInit);
+		
+			if(logout === false ){
+				location.href = "index.html";
+			}
+		
+		})
+	</script>
+</head>
+<body>
+    <nav>
+        <a href="index.html" class="logoNav"><i class='fas fa-brain'></i> IdeAR</a>
+        <span class="menuIcon"><i class="fa-solid fa-bars"></i></span>
+        <ol class="navOptions">
+            <li><a href="home.html">Publicaciones</a></li>
+            <li><a onclick="editarPerfil()" href="editProfile.html"> Editar perfil</a></li>
+            <li><a href="#team">Nosotros</a></li>
+            <li><a href="#contact">Contacto</a></li>
+        </ol>
+        <ol class="userOptions">
+            <!-- <li><a href="register.html"><i class="fa-solid fa-user"></i> Mi cuenta</a></li> -->
+            <li><a href="" onclick="exit()"><i class="fa-solid fa-right-to-bracket"></i> Desconectarse</a></li>
+        </ol>
+        <!-- <ol class="navOptions">
+            <li><a href="home.html">Publicaciones</a></li>
+            <li><a href="postProject.html">Crear publicacion</a></li>
+            <li><a onclick="editarPerfil()" href="editProfile.html"> Editar perfil</a></li>
+                <li><a href="login.html"><i class="fa-solid fa-right-to-bracket"></i> Desconectarse</a></li>
+        </ol> -->
+    </nav>
+    <main>
+        <section class="container postView">
+            <div class="navContent">
+            </div>
+
+            <section class="mainPost profile">
+
+                <section class="userProfile view">
+                    <span class="userName" id="nicknamePub"></span>
+
+                    <img src="/img/user.png">
+
+                    <section class="dataProfile">
+                        <h4><i class="fa-solid fa-location-dot"></i> Ubicación</h4>
+                        <span id="ubicacion"></span>
+                    </section>
+
+                    <section class="dataProfile">
+                        <h4><i class="fa-solid fa-question"></i> Area de Interés</h4>
+                        <span id="areaInteres"></span>
+                    </section>
+
+                    <section class="dataProfile">
+                        <h4><i class="fa-solid fa-message"></i> Publicaciones</h4>
+                        <span id="publicaciones"></span>
+                    </section>    
+
+                    <section class="dataProfile">  
+                        <h4><i class="fa-solid fa-star"></i> Reputación</h4>
+                        <span id="reputacion"></span>
+                    </section>   
+
+                </section>
+
+                <section class="profileView">
+                    <h3 class="postView"><i class="fa-solid fa-fire"></i> Publicaciones destacadas</h3>
+
+                    <section class="featuredPosts profile" style="margin-bottom: 1.5em">
+                        <article>
+                            <img src="https://via.placeholder.com/270x150" alt="">
+                            <h4>Titulo de la Publicación</h4>
+                        </article>
+
+                        <article>
+                            <img src="https://via.placeholder.com/270x150" alt="">
+                            <h4>Titulo de la Publicación</h4>
+                        </article>
+
+                        <article>
+                            <img src="https://via.placeholder.com/270x150" alt="">
+                            <h4>Titulo de la Publicación</h4>
+                        </article>
+
+                        <article>
+                            <img src="https://via.placeholder.com/270x150" alt="">
+                            <h4>Titulo de la Publicación</h4>
+                        </article>
+                    </section>                  
+                </section>
+            </section>
+        </section>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+            <path fill="#6899b6" fill-opacity="1" d="M0,288L48,272C96,256,192,224,288,197.3C384,171,480,149,576,165.3C672,181,768,235,864,250.7C960,267,1056,245,1152,250.7C1248,256,1344,288,1392,304L1440,320L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+        </svg>
+    </main>
+    <footer class="postFooter">
+        <p>
+            <a href="">Terminos y Condiciones</a>
+            <a href="">Politica de Privacidad</a>
+        </p>
+    </footer>
+    <script>
+        const exit = () =>{
+        console.log("salio");
+        let UsuarioInit = {
+            logout:false,
+            name:"",
+        };
+        localStorage.setItem("UserInit" ,JSON.stringify(UsuarioInit));
+        localStorage.removeItem("infoPubli");
+        location.href = "index.html";
+
+    }
+    </script>
+    <script src="js/helpers.js"></script>
+    <script src="js/perfil.js"></script>
+    
+</body>
+</html>
