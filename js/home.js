@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 const getPublicaciones = async() => {
 
     let containerPublicaciones = document.querySelector("#containerPublicaciones");
-    const url = "http://localhost:8080/api/obtenerPublicaciones";
+    const url = "http://api-idear-production.up.railway.app/api/obtenerPublicaciones";
 
     let responseJson = await sendDataGet(url);
     console.log(responseJson);
@@ -42,7 +42,7 @@ const getPublicaciones = async() => {
 
 const irPublicacion = async( target )=>{
     let id = target.parentNode.parentNode.parentNode.childNodes[3].innerText;
-    // const url = `http://localhost:8080/api/api/obtenerPublicacion/${id}`;
+    // const url = `http://api-idear-production.up.railway.app/api/api/obtenerPublicacion/${id}`;
     // let responseJson = await sendDataGet(url);
     // let publicaciones = responseJson.publicacion;
     let info = {

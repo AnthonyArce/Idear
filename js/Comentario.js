@@ -15,7 +15,7 @@ const crearComentario = async() => {
         fechaCreacion: fechaComentario
     }
 
-    const url = "http://localhost:8080/api/nuevoComentario";
+    const url = "http://api-idear-production.up.railway.app/api/nuevoComentario";
     const responseData = await sendData(url, data, "POST");
     location.reload();
 
@@ -32,7 +32,7 @@ const cargarComentarios = async(idPublicacion) => {
         idPublicacion
     }
 
-    const url = "http://localhost:8080/api/obtenerComentarios";
+    const url = "http://api-idear-production.up.railway.app/api/obtenerComentarios";
     const responseData = await sendData(url, data, 'POST');
     const comentarios = responseData.comentarios;
 
@@ -95,7 +95,7 @@ const eliminarComentario = (dataComentario) => {
         id: idComentario
     }
 
-    const url = "http://localhost:8080/api/eliminarComentario";
+    const url = "http://api-idear-production.up.railway.app/api/eliminarComentario";
 
     sendData(url, data, "DELETE");
     location.reload();

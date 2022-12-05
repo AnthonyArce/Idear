@@ -5,7 +5,7 @@ const eliminarPublicacion = () => {
         id
     }
 
-    const url = "http://localhost:8080/api/eliminarPublicacion";
+    const url = "http://api-idear-production.up.railway.app/api/eliminarPublicacion";
     sendData(url, data, "DELETE");
     location.href="home.html";
 

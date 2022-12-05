@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', async ()=> {
         nickname
     }
 
-  const url = "http://localhost:8080/api/obtenerUsuario";
+  const url = "http://api-idear-production.up.railway.app/api/obtenerUsuario";
   
    dataUser = await sendData(url, data, "POST");
 
@@ -74,7 +74,7 @@ const editarPerfil = () => {
         github,
         paginaWeb 
 }
-const url= "http://localhost:8080/api/editarUsuario";
+const url= "http://api-idear-production.up.railway.app/api/editarUsuario";
 sendData(url, data, "PUT");
 }
 

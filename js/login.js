@@ -23,7 +23,7 @@ const ingreso = () => {
         contraseña
     };
 
-    const url = "http://localhost:8080/api/verificarUsuario";
+    const url = "http://api-idear-production.up.railway.app/api/verificarUsuario";
 
 
     let responseJSON = sendData(url, data, "POST");

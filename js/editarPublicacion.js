@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         id
     }
 
-    const url = "http://localhost:8080/api/obtenerPublicacion";
+    const url = "http://api-idear-production.up.railway.app/api/obtenerPublicacion";
 
     let infoPublicacionres = await sendData(url, data, "POST");
 
@@ -57,7 +57,7 @@ const editarPublicacion = () => {
         id
         }
 
-    const url = "http://localhost:8080/api/editarPublicacion";
+    const url = "http://api-idear-production.up.railway.app/api/editarPublicacion";
     sendData(url, data, "PUT");
     location.reload();
 
@@ -90,7 +90,7 @@ const datosUsuario = async() => {
         nickname
       }
     
-      const url = "http://localhost:8080/api/obtenerUsuario";
+      const url = "http://api-idear-production.up.railway.app/api/obtenerUsuario";
       
        dataUser = await sendData(url, data, "POST");
       console.log(dataUser);

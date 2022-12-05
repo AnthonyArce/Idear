@@ -11,7 +11,7 @@ const datosUsuario = async() => {
         nickname
       }
     
-      const url = "http://localhost:8080/api/obtenerUsuario";
+      const url = "http://api-idear-production.up.railway.app/api/obtenerUsuario";
       
        dataUser = await sendData(url, data, "POST");
       console.log(dataUser);

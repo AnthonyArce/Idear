@@ -34,7 +34,7 @@ const validaciones = (data) => {
 }
 
 const sendData = async(data) => {
-    const url = "http://localhost:8080/api/nuevaPublicacion";
+    const url = "http://api-idear-production.up.railway.app/api/nuevaPublicacion";
 
     const myInit = {
         method: 'POST',
